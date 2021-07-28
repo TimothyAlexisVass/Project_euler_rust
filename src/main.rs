@@ -11,10 +11,11 @@ fn main() {
     // println!("{}", euler10(2000000));
     // println!("{}", euler11());
     // println!("{}", euler12(100));
-    println!("{}", euler13());
+    // println!("{}", euler13());
+    println!("Longest chain: {}", euler14());
 }
 
-// Common functions
+/* // Common functions
 fn is_prime(number: u64) -> bool {
     if number < 4 {
         return true;
@@ -355,7 +356,7 @@ fn euler12(min_divisors: u64) -> u64 {
 
 fn euler13() -> u64 {
     let mut sum: u64 = 0;
-    const numbers: [&str; 100] = [
+    const NUMBERS: [&str; 100] = [
         "37107287533902102798797998220837590246510135740250",
         "46376937677490009712648124896970078050417018260538",
         "74324986199524741059474233309513058123726617309629",
@@ -458,9 +459,33 @@ fn euler13() -> u64 {
         "53503534226472524250874054075591789781264330331690",
     ];
 
-    for i in 0..numbers.len() {
-        sum += &numbers[i][0..11].parse::<u64>().unwrap();
+    for i in 0..NUMBERS.len() {
+        sum += &NUMBERS[i][0..11].parse::<u64>().unwrap();
     }
     sum.to_string()[0..10].parse::<u64>().unwrap()
-}
+} */
 
+fn euler14() -> u64 {
+    let mut longest_chain: u64 = 0;
+    let mut longest_chain_index: u64 = 0;
+    for starting_number in 2..10_u64.pow(6) {
+        let mut n = starting_number;
+        let mut chain = 1;
+        // print!("{}", n);
+        while n != 1 {
+            chain += 1;
+            if n % 2 == 0 {
+                n /= 2;
+            } else {
+                n = 3 * n + 1;
+            }
+            // print!("->{}", n);
+        }
+        // println!(": {}", chain);
+        if chain > longest_chain {
+            longest_chain = chain;
+            longest_chain_index = starting_number;
+        }
+    }
+    longest_chain_index
+}
