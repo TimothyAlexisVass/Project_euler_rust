@@ -4,15 +4,16 @@ fn main() {
     // println!("Solution to euler3: {}", euler3(600851475143));
     // println!("Solution to euler4: {}", euler4(3));
     // println!("Solution to euler5: {}", euler5(20));
-    // println!("{}", euler6(100));
-    // println!("{}", euler7(10001));
-    // println!("{}", euler8());
-    // println!("{}", euler9());
-    // println!("{}", euler10(2000000));
-    // println!("{}", euler11());
-    // println!("{}", euler12(100));
-    // println!("{}", euler13());
-    println!("Longest chain: {}", euler14());
+    // println!("Solution to euler6: {}", euler6(100));
+    // println!("Solution to euler7: {}", euler7(10001));
+    // println!("Solution to euler8: {}", euler8());
+    // println!("Solution to euler9: {}", euler9());
+    // println!("Solution to euler10: {}", euler10(2000000));
+    // println!("Solution to euler11: {}", euler11());
+    // println!("Solution to euler12: {}", euler12(100));
+    // println!("Solution to euler13: {}", euler13());
+    // println!("Solution to euler14: {}", euler14());
+    println!("Solution to euler15: {}", euler15(2,2));
 }
 
 /* // Common functions
@@ -463,7 +464,7 @@ fn euler13() -> u64 {
         sum += &NUMBERS[i][0..11].parse::<u64>().unwrap();
     }
     sum.to_string()[0..10].parse::<u64>().unwrap()
-} */
+} 
 
 fn euler14() -> u64 {
     let mut longest_chain: u64 = 0;
@@ -488,4 +489,18 @@ fn euler14() -> u64 {
         }
     }
     longest_chain_index
+} */
+
+fn euler15(rows: u64, columns: u64) -> u64 {
+    let routes: u64 = 0;
+    println!("{}{}", rows, columns);
+    /*
+    Starting in the top left corner of a 2×2 grid,
+    and only being able to move to the right and down,
+    there are exactly 6 routes to the bottom right corner.
+    
+    How many such routes are there through a 20×20 grid?
+    */
+
+    routes
 }
